@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  main#main(role='main')
+    // Role Main
+    section
+      .container
+        // Create slides to show the promotion information of the book
+        #myCarousel.carousel.slide(data-ride='carousel', aria-label='product')
+          // Indicators
+          ol.carousel-indicators
+            li.active(data-target='#myCarousel', data-slide-to='0')
+            li(data-target='#myCarousel', data-slide-to='1')
+            li(data-target='#myCarousel', data-slide-to='2')
+          // Wrapper for slides 0, 1, 2
+          #myCarousel-items.carousel-inner
+            .item.active(role='group', aria-label='new product')
+              a
+                img(src='images/Banner_Art_1920_814.png', alt='Save off 30%', style='width:100%;')
+              .carousel-caption
+                h4 New Food
+            .item(role='group', aria-label='new promotion')
+              a
+                img(src='images/Banner_Art_1920_814_1.png', alt='Save off 70%', style='width:100%;')
+              .carousel-caption
+                h4 New Promotion
+            .item(role='group', aria-label='new sale')
+              a
+                img(src='images/Banner_Art_1920_814_2.png', alt='Save off 50%', style='width:100%;')
+              .carousel-caption
+                h4 The Best Sale Food
+          // Left and right controls
+          a.left.carousel-control(href='#myCarousel', data-slide='prev', role='button', tabindex='0', aria-controls='myCarousel-items', aria-label='Previous Slide')
+            span.glyphicon.glyphicon-chevron-left
+            span.sr-only Previous
+          a.right.carousel-control(href='#myCarousel', data-slide='next', role='button', tabindex='0', aria-controls='myCarousel-items', aria-label='Next Slide')
+            span.glyphicon.glyphicon-chevron-right
+            span.sr-only Next
